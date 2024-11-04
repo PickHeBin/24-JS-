@@ -1,0 +1,46 @@
+
+document.createElement(canvas)   返回一个对象
+document.createElement(iframe)   返回一个对象
+document.createElement(div)   返回一个对象
+document.head.appendChild
+document.head.append
+document.getAttribute
+
+
+
+Window.sessionStorage
+Window.localStorage
+Window.IndexedDB
+window.RTCPeerConnection
+window.mozRTCPeerConnection
+window.webkitRTCPeerConnection
+window.decodeURIComponent
+window.HTMLIFrameElement
+window.SpeechSynthesis 接口是语音服务的控制接口；它可以用于获取设备上关于可用的合成声音的信息，开始、暂停语音，或除此之外的其他命令。
+window.SharedArrayBuffer
+window.addEventListener
+window.XMLHttpRequest
+window.DeviceOrientationEvent
+window.DeviceMotionEvent
+window.TouchEvent
+window.chrome
+window.PointerEvent
+window.innerWidth
+window.outerWidth
+
+
+navigator.bluetooth
+navigator.credentials
+navigator.storage
+navigator.getGamepads
+navigator.hardwareConcurrency
+navigator.mediaDevices
+navigator.permissions
+navigator.deviceMemory 只读属性返回千兆字节为单位的大概的机器内存。这个值是一个 2 的次方数除以 1024，舍去小数点的近似值。并且，上下边界也用来保护那些拥有非常低端或者高端设备的用户的隐私。
+navigator.connection
+Navigator.sendBeacon 它主要用于将统计数据发送到 Web 服务器，同时避免了用传统技术
+Screen.colorDepth         返回屏幕的颜色深度（color depth）。根据 CSSOM( CSS 对象模型 ) 视图，为兼容起见，该值总为 24
+Screen.pixelDepth         返回屏幕的位深度/色彩深度（bit depth）。根据 CSSOM( CSS 对象模型 ) 视图，为兼容起见，该值总为 24。
+navigator.cookieEnabled   返回一个布尔值，来表示当前页面是否启用了 cookie。本属性为只读属性。
+navigator.javaEnabled     javaEnabled() 方法可返回一个布尔值，该值指示浏览器是否支持并启用了 Java。如果是，则返回 true，否则返回 false。(这个网址是false)
+Navigator.doNotTrack      属性返回用户的不跟踪（Do Not Track）设置，表示用户是否请求网站和广告商不进行跟踪。

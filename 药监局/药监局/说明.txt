@@ -1,0 +1,8 @@
+目标：
+https://www.nmpa.gov.cn/datasearch/search-result.html
+
+其中的查询数据接口：
+
+https://www.nmpa.gov.cn/datasearch/data/nmpadata/search
+
+sign已经好了：指纹部分不清楚需不需要，没扣代码

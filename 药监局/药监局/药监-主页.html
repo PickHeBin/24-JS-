@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <title>国家药品监督管理局数据查询</title>
+  <link rel="shortcut icon" href="https://www.nmpa.gov.cn/wbppimages/favicon.ico">
+  <link rel="stylesheet" href="css/element-ui.css">
+  <link rel="stylesheet" href="css/fonts/iconfont.css">
+  <!-- 判断 PC端 和 移动端 设备展示或者隐藏css 重要 -->
+  <link rel="stylesheet" href="css/display.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/introjs.min.css">
+  <style>
+      *[v-cloak] {
+          display: none;
+      }
+    #particles-js {
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .banner {
+      position: relative;
+      height: 414px;
+    }
+
+    .banner .banner-item {
+      width: 100%;
+      //min-width: 1200px;
+      height: 414px;
+      position: absolute;
+    }
+
+    .banner img {
+      display: block;
+      width: 100%;
+    }
+
+    .banner-list {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    .banner-list ul {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .banner-list li {
+      display: inline-block;
+      width: 25%;
+    }
+
+    .banner-list li a {
+      padding: 15px 10px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .banner-list li a:after {
+      content: "";
+      width: 0%;
+      height: 4px;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      transition: width .3s linear;
+    }
+
+    .banner-list li a:before {
+      content: "";
+      width: 0%;
+      height: 4px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      transition: width .3s linear;
+    }
+
+    .banner-list li a.active:after {
+      width: 100%;
+    }
+
+    .banner-list li a.active:before {
+      width: 100%;
+    }
+
+    .banner-list li a.yaopin:after,
+    .banner-list li a.yaopin:before {
+      background: #7ecef4;
+    }
+
+    .banner-list li a.yiliaoqixie:after,
+    .banner-list li a.yiliaoqixie:before {
+      background: #2bd9a6;
+    }
+
+    .banner-list li a.huazhuangpin:after,
+    .banner-list li a.huazhuangpin:before {
+      background: #fe996c;
+    }
+
+    .banner-list li a.qita:after,
+    .banner-list li a.qita:before {
+      background: #cabee2;
+    }
+
+    .banner-list li i {
+      font-weight: bold;
+      font-size: 56px;
+      padding-right: 5px;
+    }
+
+    .banner-list li div.banner-text {
+      display: inline-block;
+    }
+
+    .banner-list li a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .banner-list li div.banner-text span.cn {
+      font-size: 30px;
+      display: block;
+      line-height: 30px;
+    }
+
+    .banner-list li div.banner-text span.en {
+      display: block;
+      text-align: left;
+    }
+
+    .banner-search {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      min-width: 1200px;
+      top: 200px;
+    }
+      /*.announcement {*/
+      /*    position: absolute;*/
+      /*    text-align: center;*/
+      /*    width: 100%;*/
+      /*    min-width: 1200px;*/
+      /*    top: 170px;*/
+      /*}*/
+    .el-autocomplete-suggestion {
+      border-radius: 4px 4px 0 0;
+      border: none;
+    }
+
+    .banner-search-box {
+      display: inline-block;
+      position: relative;
+    }
+
+    .banner-search-box .el-input__inner {
+      border: none;
+      height: 60px;
+      line-height: 60px;
+      font-size: 16px;
+    }
+
+    .banner-search-box .search-history {
+      position: absolute;
+      background: #fff;
+      width: 600px;
+      top: 60px;
+    }
+
+    .banner-search-box .banner-search-text {
+      height: 60px;
+      border: none;
+      background: #fff;
+      width: 600px;
+      padding-left: 30px;
+      font-size: 18px;
+      color: #666;
+      border-radius: 30px 0 0 30px;
+      float: left;
+    }
+
+    .banner-search-box .banner-search-btn {
+      float: left;
+      background: #1a86ff;
+      border: none;
+      height: 60px;
+      border-radius: 0 30px 30px 0;
+      width: 90px;
+      cursor: pointer;
+    }
+
+    .banner-search-box .banner-search-btn i {
+      color: #fff;
+      font-size: 36px;
+    }
+
+    .banner-search-box .banner-search-otherbtn {
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      border: none;
+      text-align: center;
+      padding: 0 30px;
+      border-radius: 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+
+    .banner-search-box .banner-search-gaoji {
+      background: #1a86ff;
+      color: #fff;
+    }
+
+    .banner-search-box .banner-search-keshihua {
+      color: #fff;
+      border: 2px solid #fff;
+      background: none;
+    }
+
+    .banner-hot-search {
+      text-align: left;
+      margin-top: 20px;
+      margin-left: 20px;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .banner-hot-search a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    .search-result {
+      width: 1140px;
+      height: auto;
+      margin: 0 auto;
+      min-height: 160px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    .search-result-box {
+      transition: all 1s;
+      -webkit-transition: all 1s;
+      background: #fff;
+      box-shadow: 2px 5px 14px #ccc;
+      border-radius: 10px;
+      width: 100%;
+      min-height: 300px;
+      position: relative;
+      top: -80px;
+      padding-left: 10px;
+      box-sizing: border-box;
+      padding-bottom: 15px;
+    }
+
+    .search-result-box .el-row .el-col {
+      padding-top: 10px;
+      padding-left: 8px;
+    }
+
+    .search-result-box .search-link span {
+      text-decoration: underline;
+    }
+
+    .search-result-box .el-link.el-link--default.is-disabled {
+      color: #606266;
+    }
+
+    .search-result-box .el-link.el-link--default.active {
+      color: #409EFF;
+    }
+
+    .search-result-box .el-link [class*=el-icon-]+span {
+      margin-left: 10px;
+    }
+
+    .search-result-eltag {
+      margin: 10px 10px 0px 0;
+      font-size: 14px;
+      color: #000;
+      cursor: pointer;
+    }
+
+    .search-result-eltag.active {
+      background: #0061c3;
+      color: #fff;
+    }
+
+    .my-drawer {
+      overflow: auto;
+    }
+
+    .search-select {
+      float: left;
+      width: 200px;
+    }
+
+    .search-select .el-input__inner {
+      height: 48px;
+    }
+
+    .search-input {
+      float: left;
+      width: 650px;
+    }
+
+    .search-input .el-input__inner {
+      height: 48px;
+    }
+
+    .search-input .el-input-group__append {
+      width: 30px;
+      font-size: 24px;
+      background: #1a86ff;
+      color: #fff;
+      border-color: #1a86ff;
+    }
+
+    .p10 {
+      padding: 10px;
+    }
+
+    .gaoji-keyword {
+      padding-top: 10px;
+    }
+
+    .gaoji-keyword .el-radio,
+    .gaoji-keyword .el-checkbox {
+      margin-top: 10px;
+    }
+
+    .animated {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: none;
+      animation-fill-mode: none;
+    }
+
+    /* 监听屏幕大小，当屏幕小于 768ox ，则按照以下的样式进行展示该页面。 */
+    @media screen and (max-width:768px) {
+      .banner {
+        height: 140px;
+      }
+
+      .banner .banner-item {
+        height: 140px;
+      }
+
+      .banner img {
+        height: 100%;
+
+      }
+
+      .banner-list {
+        padding-top: 10px;
+      }
+
+      .banner-list ul {
+        width: 100%;
+      }
+
+      .banner-list li {
+        float: left;
+        position: relative;
+      }
+
+      .banner-list li i {
+        font-size: 14px;
+        position: absolute;
+      }
+
+      .banner-list li a {
+        padding-bottom: 23px;
+      }
+
+      .banner-list li a.yiliaoqixie {
+        padding: 15px 10px;
+      }
+
+      .banner-list li div.banner-text span.cn {
+        font-size: 16px;
+        width: 16px;
+        display: inline-block;
+      }
+
+      .banner-list li .yiliaoqixie div.banner-text span.cn {
+        width: 32px;
+      }
+
+      .banner-list li .huazhuangpin div.banner-text span.cn {
+        width: 32px;
+      }
+
+      .banner-list li div.banner-text span.en {
+        font-size: 16px;
+        text-align: center;
+      }
+
+      .banner-list li .yiliaoqixie div.banner-text span.en {
+        font-size: 12px;
+        line-height: 14px;
+      }
+
+      .banner-xs-search {
+        padding: 10px;
+      }
+
+      .banner-xs-search .el-input-group__append {
+        background: #0061c3;
+        color: #fff;
+        border-color: #0061c3;
+      }
+
+      .banner-hot-search {
+        font-size: 14px;
+        color: #333;
+        margin-top: 10px;
+        margin-left: 0px;
+      }
+
+      .banner-hot-search a {
+        color: #333;
+      }
+
+      .search-result {
+        width: 100%;
+        /* padding-bottom: 10px; */
+        min-height: auto;
+      }
+
+      .search-result-box {
+        top: 0;
+        padding: 10px 10px 10px;
+        position: static;
+        height: 94px;
+        overflow: hidden;
+        transition: height .3s linear;
+      }
+
+      .search-result-eltag {
+        margin: 0px 10px 10px 0;
+      }
+
+      .search-result-updown {
+        text-align: center;
+      }
+
+      .search-result-updown .el-button--small,
+      .el-button--small.is-round {
+        padding: 9px 45px;
+      }
+    }
+  </style>
+<meta content="{qql4096~RA_qU9ch7EJAGeUOXJylpZn4lmxWj6vMHtW0DeoOmci3zdPUZJ3LETadohdaTT6PiDgqF0UKEEElqPPOnkB7b06Oxh.EE961tWBGlZpvTDFzSLvPNWN0D5o8DhBQFGOD5w4N6zUOvkEra2sDawjYuL1bQlhV.gOXBr5g0_OcMwhVNX6.sWjzgfAnbhh0iLOKrQJl_06tWx.ZX7Stmr33aLvPJcNEYLGC9WF7xavBixRa6G1PIxQgH.q.xMRTTnvHxwZwjFOQ_Hs30VafqxOEDFsJ6Fb2nHvAeQkJjROQCtl3cMcygrPqh8cxeIn3iUkxDJvy6QSS6t1muEfYaxTaeYPTgQ90qqqqqqhS8ylsCXNHyDqk8ZGqqqqr1k674Q8iyH6968sWpJS0vrsWzEa9umsQwWHVopfAbfJFlyNAKQqqq!x7z,aac,amr,asm,avi,bak,bat,bmp,bin,c,cab,css,csv,com,cpp,dat,dll,doc,dot,docx,exe,eot,fla,flc,fon,fot,font,gdb,gif,gz,gho,hlp,hpp,htc,ico,ini,inf,ins,iso,js,jar,jpg,jpeg,json,java,lib,log,mid,mp4,mpa,m4a,mp3,mpg,mkv,mod,mov,mim,mpp,msi,mpeg,obj,ocx,ogg,olb,ole,otf,py,pyc,pas,pgm,ppm,pps,ppt,pdf,pptx,png,pic,pli,psd,qif,qtx,ra,rm,ram,rmvb,reg,res,rtf,rar,so,sbl,sfx,swa,swf,svg,sys,tar,taz,tif,tiff,torrent,txt,ttf,vsd,vss,vsw,vxd,woff,woff2,wmv,wma,wav,wps,xbm,xpm,xls,xlsx,xsl,xml,z,zip,apk,plist,ipaVcdQ_asHEiQ0Zau6WHWLZt1074790400]h1xWs_Dj9meQmCndv8dV.joBilFgtTSBxtQZxBUh4xzA9ubsJHQG95D1l88JZg1UyDZYSukoihZG9S6vMQwwg0DjEle0eCc1Rx7W9CSKVFLGPan.XqHlQ_ntWxiLF7vPzWFa_9qvbQNgb7n1.Rt3eN11URi24NaiHHNzSbbFvltWRy6D_Dyax4s_pFX0szOCTxH3b.P1amImj_vbNcw3S.sPGIFGeT1CloJl3GP83kZzn71F8xEr9GuCcxhx90vC0QWlNaA5cxxA_Nfj2QxVOvqjklMNjSfisHRE90nwTxK0Vhb7Tk00aIueaqlgL8feBkVVzMsJMxlqghoJVxCV2IKYZHoZ21KV6Q1Q31cyFk9alEGmtl6r_8SrFkY7tVK7Ml9aZsnVExTq21fAhFCLB3OrhIKEM3PwTH9GeMkJnqClRokGpQCZvAcYFRY9ZYcY9RpGtI1wTt2GsQae_qO2gEqyCWqyalql0F6a1tsa9xKVvHnVvmDr.kPWxHv0gopSvkDpZcpqnWSlsrp2ycoNuqPQBxsw2WOaSxAJ2IAepEnSvrAg1DOSgt1ZSkYR4EAVHk1z.VpEcHql2APQFxpaVUK70tn7uJGqrDrEyJfWVismZiSawls7LU6W2xaL24DUBHig26bKbq83g4GoSizgRyak_tiWXyajTEWxa4bXjlBZZdPKdx5l25p1_Fe7oea6ur8qZ_nOuhWg80A57xRVa41PqQdGv01UxRQGZnnUTR37RusCmhiVPgp4vl8GbZs4koi0qyqhYFgZ1CkuMxRAvucUKmxw.4cH6tEGi4fP0H_rZbc1VhhSyjnDjtiYu9n8ZxFR2NsnGxRr24rPqhjWDBobQR_2avOitHEAt5pM78Ff.grtTHhq2Z18.xMWVuDXTl3g8TpiQtEgvncF8EwegNpFBrMWLuviCxy72GCK8Hx02.CUpl33B.anWc.aF2ABrENGojrcll4EuOCBmlKgdM13Xxo3bFrQNFDA7WDA5hVpe8nJooVAhYCpVkDAwpO7uQl99RPRgRv7d8PRtROLBsaeSH1ZmYrrQtYLYIARaqDp_AUfPFrgp1uetxG79U1RmmaRLssfbDC35osJvWbGcADpDrVN9rpyfkppaMcpJx2YbYkeUxbmbonSDx23Pk1l1IkLzcogKI6WrrcQmic2LQSl9HnQb3cAgxPEU3CG6WfSnqUgxxrqYHPE2iPw9haEVoDaJ8UqoxcGbWb3SHaabHDRqEnlxVvaDruQkhsGlIYl9Kc3bWm0hkDfVlAldocRwxqQboSw3FrenkPZcxA0BHvzxIP09tnl5lP98VAXPQJLpCKP7H8lLjPBCijG.5cibHd9B5AvNxH9BdDUOEdWBduv6D5lx5n4aRIEBekOfiX0F5uO_x5eL7s47HdLUOrDkRwVBaKUmizY2Su.iRw0yukONhZV5nsPcx7QNnPskhygzTu4dEeQBCuvsrzgyuDPYH7Gd6fIfRzWd0PMPRXEfZu5AkxLu.o5ZiRg1BGc2IMSnOn8WFH3pLu5PxXW9N1FemdyLBU69H_VuBqKdE89uz1U0kFam_ftmcdSafc1YxLTbOk5Hx.2bSnKUE4VI7snJhM7Dbk5mhgqF.q57ENmLnSDQHyZbCc1qxNLUCCPtWW7R.kCVi.Z_bsnj8wlp3a9BqCQ_EUmIxUqvFbwNHbAvYDQLHmgXAGTBE1qzMPW2DbGk8uSwQ2ZxwD97lo95wcQTxKZvwS3aFKLbQGAjol0zVuJDrpEjIpJQkSZ_oaatQUE2UnwoR0E5A1wuJGW2p1wwmOGvh_Zqn04ls7xt0T6ApyzoC9hsqzyr6l.rqwxMT9Wqqqqr0hYOBbA6_Itlb8http:3Dw11rlzTZkWI3TUmRrjQA:80qqqqqr7J1680247967545Da67074slr7dI6mLQKyTICxZ8qZqqqqqhLFSDTVn2YZB{4EFqsbf1pDZSqTVOkAJmiTqdApWNtamU_pJ21SYhRpWrYdmUIVerDT0DrDgqVOThUpeRs0AdxYW2xeV4E1JzE6Vkh1teHLpHgmIQM.lPCYF2sBG5gYhNxbYKjYF9qqqqqr0Y5JYgWDMWTHcxpHOUD8XPLr1qqqqq"><!--[if lt IE 9]><script r='m'>document.createElement("section")</script><![endif]--><script type="text/javascript" charset="iso-8859-1" src="/datasearch/1eeUmXQiFksL/y4pPLDb7Bowp.a670748.js" r='m'></script><script type="text/javascript" r="m">(function(){var _$uV=0,_$Dc=[[6,0,4,1,7,3,2,5],[99,79,71,39,35,89,43,25,19,6,75,6,93,5,20,40,20,6,4,18,26,50,56,82,72,58,37,88,45,49,6,12,61,97,22,1,80,54,0,96,81,32,54,8,69,64,11,70,54,28,15,34,39,9,54,74,78,63,67,86,23,95,46,54,65,66,54,42,102,16,59,6,77,55,3,16,44,36,6,7,16,6,41,98,39,53,21,27,76,24,6,47,73,13,73,10,33,57,62,51,83,101,17,84,92,100,85,60,87,30,31,48,38,90,91,94,14,68,2,52,29,6],[2,7,17,20,14,1,5,3,27,13,23,26,23,12,22,27,33,24,4,28,18,25,11,16,8,10,8,29,8,32,0,32,8,21,9,8,30,8,19,15,6,31,27],[20,44,38,0,29,13,8,33,42,23,15,9,17,7,24,25,11,31,3,23,30,39,26,45,5,43,18,16,39,37,2,21,35,43,28,10,41,34,28,14,4,46,4,27,47,23,4,49,47,7,1,22,32,40,19,6,46,47,49,1,27,48,12,36,29],[13,35,2,9,10,14,12,7,17,21,33,4,11,31,23,4,30,18,23,0,5,19,22,25,32,28,16,0,6,15,1,20,26,25,8,16,27,6,4,3,36,29,4,34,21,24,4]];function _$df(_$4Q,_$Do){return _$33.Math.abs(_$4Q)%_$Do;}function _$BF(_$WW){_$WW[6]=_$pr()-_$WW[_$df(_$IC(),16)];_$lo(_$WW);var _$a9=_$O0();var _$ex=_$WW[_$df(_$VC()+_$Sd(),16)];_$WW[2]=_$3k()-_$WW[_$df(_$7p(),16)];var _$ex=_$VC();_$WW[7]=_$pr();var _$ex=_$3T();if(_$3k()-_$WW[_$df(_$7p(),16)]){if(_$VC()+_$Sd()){_$WW[_$df(_$1U(),16)]=_$3k();}}return _$KZ(_$WW);}function _$pr(){return 13}function _$IC(){return 0}function _$lo(_$WW){var _$QY=_$si();var _$QY=_$ba(_$WW);_$WW[_$df(_$3k(),16)]=_$WW[_$df(_$7p(),16)];if(_$WW[_$df(_$si(),16)]){_$WW[_$df(_$Sd(),16)]=_$pr();}if(_$O0()){_$Zc(_$WW);}var _$a9=_$si();var _$ex=_$er(_$WW);_$WW[9]=_$WW[_$df(_$7p(),16)];return _$yK(_$WW);}function _$si(){return 8}function _$ba(_$WW){var _$QY=_$1U();var _$ex=_$3k();_$WW[15]=_$O0();var _$QY=_$3T();var _$QY=_$At();return _$eu();}function _$1U(){return 3}function _$3k(){return 9}function _$O0(){return 5}function _$3T(){return 6}function _$At(){return 4}function _$eu(){return 2}function _$7p(){return 12}function _$Sd(){return 7}function _$Jg(){return 14}function _$Zc(_$WW){_$WW[1]=_$Sd();_$WW[_$df(_$eu(),16)]=_$IC();var _$QY=_$O0();var _$QY=_$un();var _$QY=_$At();var _$ex=_$eu();return _$IC();}function _$un(){return 11}function _$MR(_$WW){_$WW[12]=_$7x();_$WW[8]=_$3T();var _$QY=_$1U();var _$QY=_$3k();return _$wu();}function _$7x(){return 10}function _$wu(){return 15}function _$er(_$WW){var _$ex=_$1U();var _$ex=_$3k();var _$ex=_$7x();var _$QY=_$si();_$WW[_$df(_$Sd(),16)]=_$pr();return _$1U();}function _$yK(_$WW){_$WW[8]=_$3T();_$WW[_$df(_$pr(),16)]=_$1U();_$WW[9]=_$wu();_$WW[5]=_$un();_$mo(_$WW);return _$WW[_$df(_$IC(),16)];}function _$mo(_$WW){_$WW[_$df(_$At(),16)]=_$eu();_$WW[0]=_$Jg();_$WW[_$df(_$O0(),16)]=_$un();_$WW[1]=_$Sd();return _$pr();}function _$VC(){return 1}function _$KZ(_$WW){var _$QY=_$un();var _$QY=_$VC();_$WW[_$df(_$pr()+_$1U(),16)]=_$8d(_$WW);_$WW[5]=_$WW[_$df(_$si(),16)];if(_$WW[_$df(_$At(),16)]){_$WW[_$df(_$1U(),16)]=_$3k();}var _$ex=_$eu();if(_$3k()+_$wu()){_$WW[_$df(_$un(),16)]=_$VC();}return _$g$(_$WW);}function _$8d(_$WW){var _$a9=_$un();var _$ex=_$VC();_$WW[7]=_$pr();_$WW[3]=_$3k();return _$wu();}function _$g$(_$WW){_$qM(_$WW);var _$ex=_$1U();var _$a9=_$7x();if(_$3T()){var _$QY=_$3k();}_$WW[_$df(_$Sd(),16)]=_$pr();_$WW[_$df(_$IC(),16)]=_$Jg();_$FK(_$WW);return _$WW[_$df(_$si(),16)];}function _$qM(_$WW){_$WW[_$df(_$un(),16)]=_$VC();var _$QY=_$eu();var _$ex=_$IC();_$WW[_$df(_$wu(),16)]=_$O0();return _$un();}function _$FK(_$WW){_$WW[10]=_$si();_$WW[6]=_$At();var _$ex=_$3k();var _$QY=_$wu();return _$O0();}var _$Z1,_$wY,_$33,_$_s,_$M0,_$Ug,_$xO,_$sd,_$BF;var _$uU,_$Gv,_$uo=_$uV,_$dJ=_$Dc[0];while(1){_$Gv=_$dJ[_$uo++];if(_$Gv<4){if(_$Gv<1){_$33=window,_$_s=String,_$M0=Array,_$Ug=document,_$xO=Date;}else if(_$Gv<2){_$uU= !_$sd;}else if(_$Gv<3){_$qD(0);}else{_$sd=_$33['$_ts']={};}}else{if(_$Gv<5){_$sd=_$33['$_ts'];}else if(_$Gv<6){return;}else if(_$Gv<7){_$Z1=[4,16,64,256,1024,4096,16384,65536];}else{if( !_$uU)_$uo+=1;}}}function _$qD(_$pr,_$4Q){function _$q2(){var _$df=_$bv.charCodeAt(_$fH++ ),_$uV;if(_$df<128){return _$df;}else if(_$df<251){return _$df-32;}else if(_$df===251){return 0;}else if(_$df===254){_$df=_$bv.charCodeAt(_$fH++ );if(_$df>=128)_$df-=32;_$uV=_$bv.charCodeAt(_$fH++ );if(_$uV>=128)_$uV-=32;return _$df*219+_$uV;}else if(_$df===255){_$df=_$bv.charCodeAt(_$fH++ );if(_$df>=128)_$df-=32;_$uV=_$bv.charCodeAt(_$fH++ );if(_$uV>=128)_$uV-=32;_$df=_$df*219*219+_$uV*219;_$uV=_$bv.charCodeAt(_$fH++ );if(_$uV>=128)_$uV-=32;return _$df+_$uV;}else if(_$df===252){_$uV=_$bv.charCodeAt(_$fH++ );if(_$uV>=128)_$uV-=32;return -_$uV;}else if(_$df===253){_$df=_$bv.charCodeAt(_$fH++ );if(_$df>=128)_$df-=32;_$uV=_$bv.charCodeAt(_$fH++ );if(_$uV>=128)_$uV-=32;return _$df* -219-_$uV;}else{}}var _$3O,_$dq,_$ex,_$Rg,_$bv,_$c1,_$Ng,_$df,_$uV,_$uo,_$uU,_$2o,_$Gv,_$dJ,_$WW,_$yC,_$CY,_$a9,_$QY,_$fH;var _$lo,_$ba,_$IC=_$pr,_$1U=_$Dc[1];while(1){_$ba=_$1U[_$IC++];if(_$ba<64){if(_$ba<16){if(_$ba<4){if(_$ba<1){var _$Ng=_$sd.aebi=[];}else if(_$ba<2){var _$df=_$qD(10);}else if(_$ba<3){_$4Q._$2o="_$gz";}else{_$lo=_$df!=="functioneval(){[nativecode]}";}}else if(_$ba<8){if(_$ba<5){var _$df='';}else if(_$ba<6){for(_$df=0,_$uV=0;_$uV<_$uo;_$uV+=2){_$uU[_$df++ ]=_$2o+_$4Q.substr(_$uV,2);}}else if(_$ba<7){return;}else{_$lo=_$4Q===undefined||_$4Q==="";}}else if(_$ba<12){if(_$ba<9){var _$2o=_$q2();}else if(_$ba<10){_$dq=_$bv.substr(_$fH,_$WW).split(_$_s.fromCharCode(255));}else if(_$ba<11){_$4Q._$YH=3;}else{var _$Rg=_$q2();}}else{if(_$ba<13){_$sd._$uV=new _$xO().getTime();}else if(_$ba<14){return _$uU;}else if(_$ba<15){_$4Q._$yC="_$1K";}else{var _$WW=_$q2();}}}else if(_$ba<32){if(_$ba<20){if(_$ba<17){if( !_$lo)_$IC+=1;}else if(_$ba<18){_$4Q._$Up="_$7p";}else if(_$ba<19){_$df+="Z1wY33_sM0UgxOsdBF4QDoq2bvc1NgfH3ORgdqsKUr8MLxGghy5_DZsm3SHLKzdxdL7o9Ytyd4YHAggomKDcNjqD8vIX5vdfuVuouU2o";}else{_$33['$_ts'].l__=_$sd.l__;}}else if(_$ba<24){if(_$ba<21){_$IC+=78;}else if(_$ba<22){_$IC+=2;}else if(_$ba<23){var _$c1=_$sd._$fr;}else{_$yC.push(")();");}}else if(_$ba<28){if(_$ba<25){return _$df;}else if(_$ba<26){_$33['$_ts']={};}else if(_$ba<27){_$df+="GvdJWWyCCYa9QYexprIClosiba1U3kO03TAteu7pSdJgZcunMR7xwueryKmoVCKZ8dg$qMFKA5OG2SH6r79gfzJOQsnMmb8pmYVuZMkx";}else{_$uV=_$33.eval;}}else{if(_$ba<29){_$CY=_$q2();}else if(_$ba<30){_$4Q._$CY="_$Le";}else if(_$ba<31){_$4Q._$8M="aNZafRKx_qA";}else{_$4Q._$_s=_$BF;}}}else if(_$ba<48){if(_$ba<36){if(_$ba<33){var _$fH=0;}else if(_$ba<34){_$4Q._$X6="_$Sd";}else if(_$ba<35){_$lo=_$CY>0;}else{_$qD(31);}}else if(_$ba<40){if(_$ba<37){return 0;}else if(_$ba<38){_$df+="QgPaH_$Gok5j0gJc1aoIfynfSMxamTo74JO7kWbiDVQLVJ2dLUcrQa6V2Mrh2mghJSjf6fNngkfvTEMmyczRx4VoByLNkEgHNR0TvIgf";}else if(_$ba<39){_$4Q._$hL=38;}else{if( !_$lo)_$IC+=2;}}else if(_$ba<44){if(_$ba<41){_$4Q._$33=80;}else if(_$ba<42){var _$df;}else if(_$ba<43){var _$ex=_$qD(10);}else{_$8v(0);}}else{if(_$ba<45){return 1;}else if(_$ba<46){_$df+="Hi62ZZTBA8OHyBgJnWAsGWk$Tk8o$sSJaVIPAhPZnhE0Pr8x0uQZCVvF0Ecxh43D66n5edZTvmhqLJ7$uMXabfj4tI_RRYevFBKVn90R";}else if(_$ba<47){_$sd._$uV-=_$qD(10);}else{_$4Q._$d4=19;}}}else{if(_$ba<52){if(_$ba<49){_$4Q._$dJ="h7AuBKpLk_lR1kGM6qnDwA";}else if(_$ba<50){return _$qD(12,_$df);}else if(_$ba<51){_$df+="b7H7eq3WBa5$IKscxzqR8KWJTepciwpaqP2NzMqEm6VyaThvlrLM59ypHTZu1xspjX0Vm$cf_ZEhP3F7BkUpX6YJHxS7m42RgK_ovzLe";}else{_$4Q._$YJ="_$3T";}}else if(_$ba<56){if(_$ba<53){_$4Q._$UX="_$Z1";}else if(_$ba<54){_$df=_$33.execScript(_$4Q);}else if(_$ba<55){}else{_$df=_$df.replace(RegExp('[\\r\\n\\s]','g'),"");}}else if(_$ba<60){if(_$ba<57){_$df+="bJJt1KpYqpkjC4gz_rDdXIlvllezhL9fj5bYYzfrTM1nYY8gT_sTJDMD9Uk2o5LcJXW9zqqWe_V0QWpC85Gr_y7n5YZdIgjcgAcgVe$Y";}else if(_$ba<58){_$4Q._$P3="_$3k";}else if(_$ba<59){_$df+="Lqk4zQ6Ps87Xi5RwUnfoBir$7G6kBApqDDhu8siB802lQAKWJARsfwRrKgwvvpOLoA7worx3hPgtog1j1iQ0A9EVxeSBCQTSXyVgwOcm";}else{_$sd._$PJ=1;}}else{if(_$ba<61){_$4Q._$Ag="ugASuVLUjiG";}else if(_$ba<62){var _$bv=_$sd["a670748"];}else if(_$ba<63){_$4Q._$Eh="_$O0";}else{var _$CY=_$q2();}}}}else{if(_$ba<80){if(_$ba<68){if(_$ba<65){var _$3O=_$q2();}else if(_$ba<66){_$uV=_$qD(10);}else if(_$ba<67){_$qD(79,_$QY);}else{for(_$a9=0;_$a9<_$CY;_$a9++ ){_$8v(16,_$a9,_$yC);}}}else if(_$ba<72){if(_$ba<69){_$4Q._$cN="_$LP";}else if(_$ba<70){var _$Gv=_$q2();}else if(_$ba<71){var _$dJ=_$q2();}else{_$lo=_$sd["a670748"];}}else if(_$ba<76){if(_$ba<73){_$df+="V3aqkSP8Aa_IudO1mRmVJ8zm4XsMSNZbx1Clvuoadzl92n64Ue1Jt7yaryQp5yJ9zIH00rWr_SSbzBHUNfpiTXeT$dTZazdMrOE9hsDJ";}else if(_$ba<74){_$IC+=-78;}else if(_$ba<75){_$fH+=_$WW;}else{return new _$xO().getTime();}}else{if(_$ba<77){_$df=_$uV.call(_$33,_$4Q);}else if(_$ba<78){var _$df=_$33.eval.toString();}else if(_$ba<79){var _$yC=[];}else{_$qD(91,_$sd);}}}else if(_$ba<96){if(_$ba<84){if(_$ba<81){var _$uV=_$qD(10);}else if(_$ba<82){var _$uU=_$bv.length;}else if(_$ba<83){_$df+="G3OYyOh6raPJ8VWkcNUXiU6n7vAElJYNNYc_eZbpulo4IB_hOMTxggDLszdARQS8sI2uR4_mSqLT8YLyV6nBug3tz1dQb30sEBnXw_gm";}else{_$4Q._$F7="_$At";}}else if(_$ba<88){if(_$ba<85){_$4Q._$Hx="_$Zc";}else if(_$ba<86){_$4Q._$M0="9vOpfL4p2Ea";}else if(_$ba<87){for(_$a9=0;_$a9<_$CY;_$a9++ ){_$yC.push("}");}}else{_$4Q._$xO="kpajE6bmmOIjne6rlOYUx3";}}else if(_$ba<92){if(_$ba<89){_$df+="HZXV49yiRkEgRAhOe$QEFgq_1w$RR2Y3BQ3PZfxCE1dFYhfNNMt8nsxfgVDCkRHzN6aitbzLEaNLzKdIqJx9RPLh$lFrJfdt6a94DIxo";}else if(_$ba<90){_$IC+=1;}else if(_$ba<91){_$4Q._$8V="_$MZ";}else{_$4Q._$WW="_$Dd";}}else{if(_$ba<93){_$4Q._$lo="_$Jg";}else if(_$ba<94){var _$df,_$uV,_$uo=_$4Q.length,_$uU=new _$M0(_$uo/2),_$2o='_$';}else if(_$ba<95){_$4Q._$Wk="_$DS";}else{var _$QY=_$yC.join('');}}}else{if(_$ba<100){if(_$ba<97){var _$uo=_$qD(72);}else if(_$ba<98){_$sd["a670748"]=_$wY;}else if(_$ba<99){_$lo=_$33.execScript;}else{_$sd._$fr=_$qD(18);}}else{if(_$ba<101){_$4Q._$IC="_$Gv";}else if(_$ba<102){_$4Q._$Bk="_$eu";}else{_$lo=_$ex-_$df>12000;}}}}}function _$8v(_$uU,_$sK,_$Ur){function _$8M(){var _$dJ=[0];Array.prototype.push.apply(_$dJ,arguments);return _$IX.apply(this,_$dJ);}var _$dL,_$7o,_$9Y,_$df,_$uV,_$uo,_$Lx,_$Gg,_$hy,_$5_,_$DZ,_$sm,_$3S,_$HL,_$Kz,_$dx;var _$Gv,_$WW,_$2o=_$uU,_$yC=_$Dc[2];while(1){_$WW=_$yC[_$2o++];if(_$WW<16){if(_$WW<4){if(_$WW<1){var _$uV=new _$M0(_$df);}else if(_$WW<2){_$Lx.open('GET',_$uV,false);}else if(_$WW<3){var _$df=_$Ug.scripts.length;}else{_$Lx.send();}}else if(_$WW<8){if(_$WW<5){var _$hy=_$q2();}else if(_$WW<6){_$Lx.onreadystatechange=_$8M;}else if(_$WW<7){for(_$uo=0;_$uo<_$uV;_$uo++ ){_$9Y[_$uo]=_$8v(9);}}else{var _$uV=_$df>1?_$Ug.scripts[_$df-2].src:_$wY;}}else if(_$WW<12){if(_$WW<9){}else if(_$WW<10){_$Ng[_$sK]=_$df;}else if(_$WW<11){var _$Kz=_$8v(9);}else{var _$3S=_$q2();}}else{if(_$WW<13){for(_$uo=0;_$uo<_$df;_$uo++ ){_$uV[_$uo]=_$q2();}}else if(_$WW<14){var _$df=_$q2();}else if(_$WW<15){_$Lx=_$33.ActiveXObject?new _$33.ActiveXObject('Microsoft.XMLHTTP'):new _$33.XMLHttpRequest();}else{var _$9Y=[];}}}else if(_$WW<32){if(_$WW<20){if(_$WW<17){var _$HL=_$q2();}else if(_$WW<18){_$Gv=_$uV;}else if(_$WW<19){var _$DZ=_$q2();}else{var _$uV=_$q2();}}else if(_$WW<24){if(_$WW<21){if( !_$Gv)_$2o+=4;}else if(_$WW<22){var _$df=_$8v(9);}else if(_$WW<23){return _$uV;}else{_$2o+=19;}}else if(_$WW<28){if(_$WW<25){var _$Gg=_$q2();}else if(_$WW<26){var _$sm=_$q2();}else if(_$WW<27){var _$dL=_$8v(9);}else{return;}}else{if(_$WW<29){var _$5_=_$q2();}else if(_$WW<30){var _$dx=_$8v(9);}else if(_$WW<31){var _$7o=_$8v(9);}else{_$IX(5,_$Ur);}}}else{if(_$WW<33){_$2o+=-19;}else{var _$Lx=_$q2();}}}function _$IX(_$uV,_$ty){var _$d4,_$df;var _$uU,_$Gv,_$uo=_$uV,_$dJ=_$Dc[3];while(1){_$Gv=_$dJ[_$uo++];if(_$Gv<16){if(_$Gv<4){if(_$Gv<1){_$uo+=27;}else if(_$Gv<2){_$ty.push("[");}else if(_$Gv<3){_$uo+=-27;}else{_$ty.push("(");}}else if(_$Gv<8){if(_$Gv<5){_$ty.push(",");}else if(_$Gv<6){_$uo+=-23;}else if(_$Gv<7){_$ty.push("while(1){");}else{_$ty.push(_$c1[_$Rg]);}}else if(_$Gv<12){if(_$Gv<9){_$uU=_$sK==0;}else if(_$Gv<10){_$ty.push(_$c1[_$3O]);}else if(_$Gv<11){_$ty.push(_$c1[_$dx[0]]);}else{_$ty.push("function ");}}else{if(_$Gv<13){_$5v(12,0,_$9Y.length);}else if(_$Gv<14){var _$df,_$d4=4;}else if(_$Gv<15){_$ty.push(_$c1[_$hy]);}else{_$ty.push("=0,");}}}else if(_$Gv<32){if(_$Gv<20){if(_$Gv<17){_$uU=_$sd["a670748"];}else if(_$Gv<18){_$ty.push("=$_ts.scj,");}else if(_$Gv<19){_$qD(79,_$Lx.responseText);}else{if( !_$uU)_$uo+=9;}}else if(_$Gv<24){if(_$Gv<21){_$uU=_$Lx.readyState==4;}else if(_$Gv<22){_$5v(39);}else if(_$Gv<23){_$ty.push(_$sK);}else{_$ty.push(_$c1[_$Gg]);}}else if(_$Gv<28){if(_$Gv<25){_$ty.push("=$_ts.aebi;");}else if(_$Gv<26){_$uo+=8;}else if(_$Gv<27){for(_$df=0;_$df<_$Kz.length;_$df++ ){_$ty.push(",");_$ty.push(_$c1[_$Kz[_$df]]);}}else{_$ty.push(_$c1[_$Lx]);}}else{if(_$Gv<29){_$ty.push("var ");}else if(_$Gv<30){return;}else if(_$Gv<31){_$uU=_$Kz.length;}else{_$ty.push(_$c1[_$DZ]);}}}else if(_$Gv<48){if(_$Gv<36){if(_$Gv<33){_$ty.push("];");}else if(_$Gv<34){if( !_$uU)_$uo+=8;}else if(_$Gv<35){_$ty.push(";");}else{_$uU=_$dx.length;}}else if(_$Gv<40){if(_$Gv<37){_$ty.push("}");}else if(_$Gv<38){_$qD(31);}else if(_$Gv<39){for(_$df=0;_$df<_$dL.length;_$df+=2){_$5v(0,_$dL[_$df],_$dL[_$df+1],_$ty);}}else{if( !_$uU)_$uo+=1;}}else if(_$Gv<44){if(_$Gv<41){_$uU=_$9Y.length;}else if(_$Gv<42){for(_$df=1;_$df<_$dx.length;_$df++ ){_$ty.push(",");_$ty.push(_$c1[_$dx[_$df]]);}}else if(_$Gv<43){_$ty.push("(function(){var ");}else{if( !_$uU)_$uo+=4;}}else{if(_$Gv<45){_$uo+=23;}else if(_$Gv<46){_$ty.push("){");}else if(_$Gv<47){_$ty.push(_$c1[_$3S]);}else{_$ty.push("=");}}}else{if(_$Gv<49){_$ty.push("++];");}else{_$ty.push(_$c1[_$HL]);}}}function _$5v(_$2o,_$YH,_$Ag,_$go){var _$uV,_$uo,_$uU,_$df;var _$dJ,_$yC,_$Gv=_$2o,_$CY=_$Dc[4];while(1){_$yC=_$CY[_$Gv++];if(_$yC<16){if(_$yC<4){if(_$yC<1){_$5v(4,_$YH);}else if(_$yC<2){_$uo=0;}else if(_$yC<3){for(_$uV=0;_$uV<_$df;_$uV+=2){_$ty.push(_$dq[_$7o[_$uV]]);_$ty.push(_$c1[_$7o[_$uV+1]]);}}else{var _$df=_$7o.length;}}else if(_$yC<8){if(_$yC<5){return;}else if(_$yC<6){_$Gv+=17;}else if(_$yC<7){_$ty.push("}");}else{for(_$uo=0;_$uo<_$uV;_$uo+=2){_$ty.push(_$dq[_$df[_$uo]]);_$ty.push(_$c1[_$df[_$uo+1]]);}}}else if(_$yC<12){if(_$yC<9){for(;_$YH+_$uo<_$Ag;_$YH+=_$uo){_$ty.push(_$uV);_$ty.push(_$c1[_$3S]);_$ty.push('<');_$ty.push(_$YH+_$uo);_$ty.push("){");_$5v(12,_$YH,_$YH+_$uo);_$uV="}else if(";}}else if(_$yC<10){_$Gv+=39;}else if(_$yC<11){var _$df=_$9Y[_$YH];}else{var _$df,_$uV,_$uo,_$uU=_$Ag-_$YH;}}else{if(_$yC<13){_$uV-=_$uV%2;}else if(_$yC<14){_$go.push(["function ",_$c1[_$YH],"(){var ",_$c1[_$5_],"=[",_$Ag,"];Array.prototype.push.apply(",_$c1[_$5_],",arguments);return ",_$c1[_$sm],".apply(this,",_$c1[_$5_],");}"].join(''));}else if(_$yC<15){var _$uV=_$df.length;}else{_$Gv+=8;}}}else if(_$yC<32){if(_$yC<20){if(_$yC<17){_$ty.push("}else{");}else if(_$yC<18){_$dJ=_$df.length!=_$uV;}else if(_$yC<19){_$dJ=_$uU==1;}else{_$dJ=_$uU<=_$d4;}}else if(_$yC<24){if(_$yC<21){for(_$df=1;_$df<7;_$df++ ){if(_$uU<=_$Z1[_$df]){_$uo=_$Z1[_$df-1];break;}}}else if(_$yC<22){if( !_$dJ)_$Gv+=1;}else if(_$yC<23){if( !_$dJ)_$Gv+=7;}else{if( !_$dJ)_$Gv+=2;}}else if(_$yC<28){if(_$yC<25){_$ty.push(_$dq[_$7o[_$df]]);}else if(_$yC<26){_$uV="if(";}else if(_$yC<27){}else{_$5v(12,_$YH,_$Ag);}}else{if(_$yC<29){for(;_$YH<_$Ag;_$YH++ ){_$ty.push(_$uV);_$ty.push(_$c1[_$3S]);_$ty.push('<');_$ty.push(_$YH+1);_$ty.push("){");_$5v(4,_$YH);_$uV="}else if(";}}else if(_$yC<30){_$Gv+=-40;}else if(_$yC<31){_$Gv+=21;}else{_$dJ=_$uU==0;}}}else{if(_$yC<36){if(_$yC<33){_$Ag-- ;}else if(_$yC<34){_$ty.push(_$dq[_$df[_$uV]]);}else if(_$yC<35){_$dJ=_$7o.length!=_$df;}else{_$Gv+=40;}}else{_$df-=_$df%2;}}}}}}}})()</script></head>
+
+<body class="root">
+<!--  <div id="imgDiv" style="position:fixed;right:0px;top:70%;z-index:1;">-->
+<!--    <div>-->
+<!--      <div id="a"-->
+<!--        style="text-align: center;cursor: pointer;position:absolute;left:363px;top:-4px; width:20px;height:20px; color: #fff;">-->
+<!--        <span>x</span>-->
+<!--      </div>-->
+<!--      <a href="search-help.html" target="_blank">-->
+<!--        <img class="el-icon-edit-outline" src="./images/cd780a48368e96ffdaeda207e6a2e91.png" alt="">-->
+<!--      </a>-->
+<!--    </div>-->
+<!--  </div>-->
+  <!-- vue对象 -->
+  <div id="home" style="visibility: hidden" v-cloak>
+    <!-- 头部 -->
+    <header>
+      <my-header></my-header>
+    </header>
+    <!-- 身体 -->
+    <main>
+      <div class="banner">
+        <div v-for="(item, index) in bannerData" :key="index">
+          <transition name="el-fade-in">
+            <div class="banner-item" v-show="index == bannerIndex">
+              <img :src="item.bgImg" alt="">
+            </div>
+          </transition>
+        </div>
+        <div id="particles-js">
+          <canvas class="particles-js-canvas-el"></canvas>
+        </div>
+
+        <!-- 药品、医疗器械、化妆品、其它 四大模块标签页 -->
+        <div class="banner-list" style="z-index: 99999999">
+          <ul data-step="1" data-intro="选择数据分类" data-position="bottom" id="banner">
+            <li v-for="(item, index) in bannerData" :key="index">
+              <a href="javascript:;" :class="item.className" @click="fnBannerNav(index, item)"
+                @mouseover="hoverEvt(index, item)" @mouseout="hoverOutEvt(index, item)">
+                <i :class="item.icon"></i>
+                <div class="banner-text">
+                  <span class="cn">{{item.text}}</span>
+                  <span class="en" style="text-align: center !important;">{{item.en}}</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+<!--   临时添加公告     -->
+<!--        <div class="announcement">-->
+<!--          <span style="color:red;font-weight: bold;font-size: 18px">因国家药监局网络升级，国家药监局政府网站数据查询将于2022年9月3日（星期六）18:00至2022年9月4日（星期日）10:00暂停服务，给您带来的不便，敬请谅解！</span>-->
+<!--        </div>-->
+        <!-- 模块下拉选 以及 搜索框 -->
+        <div class="banner-search hidden-xs-only">
+          <div style="margin: 15px auto 0; width: 950px;">
+            <!-- pc 下拉选模块 -->
+            <el-select data-step="3" data-intro="默认选中的数据库，支持下拉重新选择" class="search-select" v-model="couponSelected"
+              @change="fnSelect" :popper-append-to-body="false" placeholder="请选择">
+              <el-option v-for="(item, index) in searchDbResultArray" :key="item.index" :label="item.itemName"
+                :value="item.itemId">
+              </el-option>
+            </el-select>
+            <!-- pc搜索框 -->
+            <el-input data-step="4" data-intro="输入需要查询的关键词" class="search-input" :placeholder="gjFeildTipTxt"
+              v-model="bannerSearch" ref="searchInput" @keyup.enter.native="fnSearch('')">
+              <el-button data-step="5" data-intro="点击查看查询结果" slot="append" @click="fnSearch('')" icon="el-icon-search">
+              </el-button>
+            </el-input>
+          </div>
+        </div>
+      </div>
+
+      <!-- 公示库展示区 -->
+      <div class="container">
+        <!-- 移动端搜索框 -->
+        <div class="banner-xs-search hidden-sm-and-up">
+<!--          <div>-->
+<!--            <span style="color:red;font-size: 14px">因国家药监局网络升级，国家药监局政府网站数据查询将于2022年9月3日（星期六）18:00至2022年9月4日（星期日）10:00暂停服务，给您带来的不便，敬请谅解！</span>-->
+<!--          </div>-->
+          <el-input :placeholder="gjFeildTipTxt" v-model="bannerSearch" class="input-with-select"
+            @keyup.enter.native="fnSearch('')">
+            <el-button slot="append" class="banner-xs-searchbtn" @click="fnSearch('')" icon="el-icon-search">
+            </el-button>
+          </el-input>
+        </div>
+        <div class="search-result fadeInUp animated">
+          <div class="search-result-box" :style='{"height": searchResultUpDownState?"auto":""}' ref="search_result"
+            data-step="2" data-intro="选择需要查询的数据库" data-position="top">
+            <el-row class="pc-max">
+              <el-col v-for="(item, index) in searchResultArray" :key="index" :span="8">
+                <el-divider direction="vertical"></el-divider>
+                <el-link @click="selectKeyWord(item, index)" icon="el-icon-upload2"
+                  :class="{'active': item.itemId == couponSelected}" :title="item.itemName" :underline=false
+                  v-if="item.itemType=='table'&&item.must_searchKey">{{item.itemName}}</el-link>
+                <el-link @click="selectKeyWord(item, index,'linksearch')" icon="el-icon-s-promotion" :underline=false
+                  class="search-link" :title="item.itemName" v-if="item.itemType=='table'&&!item.must_searchKey">
+                  {{item.itemName}}
+                  <!-- <el-badge value="全部" class="item" type="info"></el-badge> -->
+                </el-link>
+                <el-link @click="selectKeyWord(item, index)" icon="el-icon-link" :underline=false class="search-link"
+                  v-if="item.itemType!='table'" :title="item.itemName">{{item.itemName | ellipsis('15')}}<el-badge
+                    value="链接" class="item" type="primary"></el-badge>
+                </el-link>
+              </el-col>
+            </el-row>
+            <el-row class="phone-sm">
+              <el-col v-for="(item, index) in searchResultArray" :key="index" :span="12">
+                <el-divider direction="vertical"></el-divider>
+                <el-link @click="selectKeyWord(item, index)" icon="el-icon-upload2"
+                  :class="{'active': item.itemId == couponSelected}" :title="item.itemName" :underline=false
+                  v-if="item.itemType=='table'&&item.must_searchKey">{{item.itemName | ellipsis('8')}}</el-link>
+                <el-link @click="selectKeyWord(item, index,'linksearch')" icon="el-icon-s-promotion" :underline=false
+                  class="search-link" :title="item.itemName" v-if="item.itemType=='table'&&!item.must_searchKey">
+                  {{item.itemName | ellipsis('8')}}
+                  <!-- <el-badge value="全部" class="item" type="info"></el-badge> -->
+                </el-link>
+                <el-link @click="selectKeyWord(item, index)" icon="el-icon-link" :underline=false class="search-link"
+                  v-if="item.itemType!='table'" :title="item.itemName">{{item.itemName | ellipsis('8')}}
+                  <!--<el-badge value="链接" class="item" type="primary"></el-badge>-->
+                </el-link>
+              </el-col>
+            </el-row>
+            <br>
+            <el-divider><span style="font-weight: bold;">{{paraName}}</span></el-divider>
+          </div>
+
+          <div class="search-result-updown hidden-sm-and-up">
+            <el-button type="primary" :icon="searchResultUpDownState?'el-icon-arrow-up':'el-icon-arrow-down'"
+              size="small" @click="fnSearchResultUpDown">{{searchResultUpDownState?'收起':'展开'}}</el-button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 底部 -->
+    <footer>
+      <div style="margin: 0 auto; text-align: center;">
+        <span>
+        温馨提示：如对基础数据信息有疑问，可点击<a href="search-help.html" target="_blank">“常见问题”</a>进行查阅，企业用户可通过基础数据详情页面的“数据反馈”按钮在线反馈。
+      </span>
+      </div>
+      <my-footer></my-footer>
+    </footer>
+
+  </div>
+
+  <script src="js/httpVueLoader.js"></script>
+  <script src="js/polyfill.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.cookie.js"></script>
+  <script src="js/vue-2.6.0.js"></script>
+  <script src="js/element-ui.js"></script>
+  <script src="js/intro.min.js"></script>
+  <script src="css/fonts/iconfont.js"></script>
+  <script src="js/md5.js"></script>
+  <script src="js/axios.min.js"></script>
+
+  <script src="js/ajax.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/util.js"></script>
+
+  <script src="js/index/home-index.js?version=v4" id="ie"></script>
+  <script src="js/lizi.js"></script>
+  <script type="text/javascript">
+    /**
+     * 此处代码为弹窗，为防止后续需要，故只做注释
+     */
+    // var xin = true,
+    //   yin = true;
+    // var step = 1;
+    // var delay = 10;
+    // var $obj;
+    // $(function() {
+    //     $obj = $("#imgDiv");
+    //     var time = window.setInterval("move()", delay);
+    //     $obj.mouseover(function() {
+    //         clearInterval(time)
+    //     });
+    //     $obj.mouseout(function() {
+    //         time = window.setInterval("move()", delay)
+    //     });
+    // });
+    //
+    // function move() {
+    //     var left = $obj.offset().left;
+    //     var top = $obj.offset().top;
+    //     var L = T = 0; //左边界和顶部边界
+    //     var R = $(window).width() - $obj.width(); // 右边界
+    //     var B = $(window).height() - $obj.height(); //下边界
+    //     if (left < L) {
+    //         xin = true; // 水平向右移动
+    //     }
+    //     if (left > R) {
+    //         xin = false;
+    //     }
+    //     if (top < T) {
+    //         yin = true;
+    //     }
+    //     if (top > B) {
+    //         yin = false;
+    //     }
+    //     left = left + step * (xin == true ? 1 : -1);
+    //     top = top + step * (yin == true ? 1 : -1);
+    //     // 给div 元素重新定位
+    //     $obj.offset({
+    //         top: top,
+    //         left: left
+    //     })
+    // }
+    // $(function () {
+    //   $("#a").click(function () {
+    //     var b = $("#a").parent();
+    //     $(b).remove();
+    //   })
+    // })
+		//$("#imgDiv").draggable();
+  </script>
+  <script>
+    // (1)、页面所有内容加载完成执行
+    window.onload = function () {
+      document.getElementById("home").style.visibility = "visible";
+    }
+  </script>
+</body>
+
+</html>

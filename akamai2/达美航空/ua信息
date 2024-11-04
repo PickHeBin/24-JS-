@@ -1,0 +1,189 @@
+ var MJ = function() {
+    nM.push(WEf);
+    var rEf = HI();       取UserAgent
+    var JEf = (ff.bO.apply(null, [cR, IW, x4]))[ff.qz(Ih([]), vl, QEf, Ov)](fM(Sx, [hN, Kh, rEf]));  用for取UserAgent的每个字符对于unicode编码值
+    var CEf = HR(nf[ff.vk.apply(null, [qv, Jc, UV, kS])].bmak[ff.FB.apply(null, [cR, WR, Qc, NEf, Zl])], Vh);   开始时间除以2
+    var UEf = AR(Lh);
+    var wEf = AR(Lh);
+    var IEf = AR(Lh);
+    var ZEf = AR(ff[ff.ss(sW, dM, QS)]());
+    var n6f = AR(Lh);
+    var f6f = AR(Lh);
+    var B6f = AR(Lh);
+    var E6f = AR(Lh);
+    try {
+        var O6f = nM.slice();
+        E6f = nf[ff.Kz(IW, gr, CS)](cU(ff.Pm(Kh, tc, NS), nf[ff.vk(Ih({}), Jc, CM, kS)]) 判断ontouchstart属性是否在window里 || vh(nf[ff.nz.call(null, mP, k6f, qP)][ff.cm(dP, US, TP)], Kh) 判断当前设备能够支持的最大同时触摸的点数是否大于0 || vh(nf[ff.nz(DW, k6f, qP)][ff.T6.call(null, nP, Oc, z6f, DV)], Kh));
+    } catch (s6f) {
+        nM = O6f.slice();
+        E6f = AR(Lh);
+    }
+    try {
+        var t6f = nM.slice();
+        UEf = nf[ff.vk(Ih(Ih(Kh)), Jc, Ih(Ih({})), kS)][ff.Dz.call(null, bV, pS, kr)] ? nf[ff.vk.apply(null, [Kv, Jc, Ih(Ih(Lh)), kS])][ff.Dz.apply(null, [sl, pS, kr])][ff.Vm.call(null, ql, wS, Y6f)] : AR(Lh);    取screen.availWidth
+    } catch (q6f) {
+        nM = t6f.slice();
+        UEf = AR(Lh);
+    }
+    try {
+        var T6f = nM.slice();
+        wEf = nf[ff.vk.call(null, bV, Jc, PR, kS)][ff.Dz.call(null, Ih(Kh), pS, kr)] ? nf[ff.vk(sl, Jc, JC, kS)][ff.Dz.call(null, vl, pS, kr)][ff.Wm.apply(null, [pW, IS, hh])] : AR(Lh);            取screen.availHeight
+    } catch (H6f) {
+        nM = T6f.slice();
+        wEf = AR(Lh);
+    }
+    try {
+        var m6f = nM.slice();
+        IEf = nf[ff.vk(JC, Jc, tl, kS)][ff.Dz.call(null, Nr, pS, kr)] ? nf[ff.vk.call(null, cW, Jc, Ih({}), kS)][ff.Dz.call(null, ql, pS, kr)][ff.cz(Mh, Hc, b6f, xV)] : AR(Lh);
+    } catch (x6f) {
+        nM = m6f.slice();
+        IEf = AR(Lh);
+    }
+    try {
+        var j6f = nM.slice();
+        ZEf = nf[ff.vk.apply(null, [DP, Jc, bP, kS])][ff.Dz(Kv, pS, kr)] ? nf[ff.vk(KV, Jc, gP, kS)][ff.Dz(mP, pS, kr)][ff.lf.call(null, tl, Hc, K6f, L6f)] : AR(Lh);
+    } catch (A6f) {
+        nM = j6f.slice();
+        ZEf = AR(Lh);
+    }
+    try {
+        var d6f = nM.slice();
+        n6f = nf[ff.vk.apply(null, [WR, Jc, UV, kS])][ff.rm.call(null, gl, F6f, Oc, fK)] || (nf[ff.TO.apply(null, [DP, OQ, Ih(Ih([])), ZS])][ff.PE.apply(null, [tv, IN, g6f, jr, kr, xv])] && cU(ff.Jm(qc, jr, nX), nf[ff.TO.apply(null, [jP, OQ, KV, ZS])][ff.PE(Ih(Kh), IN, g6f, XV, kr, Mh)]) ? nf[ff.TO.apply(null, [OM, OQ, Ol, ZS])][ff.PE(Kv, IN, g6f, PR, kr, Ev)][ff.Jm(qc, TP, nX)] : nf[ff.TO(nQ, OQ, qU, ZS)][ff.Mm(jV, tl, fX)] && cU(ff.Jm.call(null, qc, Ih(Ih(Kh)), nX), nf[ff.TO(Ev, OQ, XV, ZS)][ff.Mm.call(null, jV, TP, fX)]) ? nf[ff.TO.apply(null, [Ih(Lh), OQ, Kh, ZS])][ff.Mm(jV, PR, fX)][ff.Jm(qc, Lh, nX)] : AR(ff[ff.ss.apply(null, [sW, sW, QS])]()));
+    } catch (p6f) {
+        nM = d6f.slice();
+        n6f = AR(Lh);
+    }
+    try {
+        var S6f = nM.slice();
+        f6f = nf[ff.vk(Vh, Jc, nP, kS)][ff.Qm(IC, Il, BX)] || (nf[ff.TO(GV, OQ, jr, ZS)][ff.PE.call(null, wV, IN, g6f, KP, kr, Ih(Lh))] && cU(ff.Cm(Ih(Ih(Lh)), bv, xv, m4), nf[ff.TO.call(null, Ih(Ih({})), OQ, lr, ZS)][ff.PE.call(null, cr, IN, g6f, TW, kr, zW)]) ? nf[ff.TO.call(null, BJ, OQ, sl, ZS)][ff.PE(xV, IN, g6f, Al, kr, Ih(Ih(Lh)))][ff.Cm(Tv, bv, PR, m4)] : nf[ff.TO(cR, OQ, Ih(Ih([])), ZS)][ff.Mm(jV, Ih(Ih([])), fX)] && cU(ff.Cm(Ih([]), bv, Ev, m4), nf[ff.TO.call(null, cr, OQ, Rl, ZS)][ff.Mm.call(null, jV, KV, fX)]) ? nf[ff.TO.call(null, KV, OQ, lh, ZS)][ff.Mm.call(null, jV, Ih(Ih({})), fX)][ff.Cm(UV, bv, Zl, m4)] : AR(RP[Vh]));
+    } catch (X6f) {
+        nM = S6f.slice();
+        f6f = AR(Lh);
+    }
+    try {
+        var D6f = nM.slice();
+        B6f = cU(ff.Nm(cr, Oc, Lh, EX), nf[ff.vk.call(null, Hc, Jc, IW, kS)]) && Ph(AU(RP[OM]), nf[ff.vk.apply(null, [Ih(Ih([])), Jc, kN, kS])][ff.Nm(Ih(Ih({})), Oc, Ih({}), EX)]) ? nf[ff.vk(sl, Jc, Ih(Lh), kS)][ff.Nm.call(null, Ih(Ih(Lh)), Oc, vV, EX)] : AR(Lh);
+    } catch (G6f) {
+        nM = D6f.slice();
+        B6f = AR(Lh);
+    }
+    h6f = nf[ff.Tz(gr, KP, M6f)](HR(nf[ff.vk(JC, Jc, Ih(Lh), kS)].bmak[ff.FB.call(null, Mh, WR, Qc, NEf, TP)], RP[jv]), RP[tv]),
+    hC = nf[ff.Tz.call(null, gr, gP, M6f)](HR(h6f, jP), YP);
+    var l6f = nf[ff.Jk.call(null, DP, Rl, OX)][ff.Ck.call(null, rR, kX, wV)]();
+    var v6f = nf[ff.Tz.call(null, gr, sl, M6f)](HR(cv(jff, l6f), Vh), RP[tv]);
+    var R6f = (ff.bO(cR, Oc, x4))[ff.qz(vR, qP, QEf, Ov)](l6f);
+    R6f = Zh(R6f[ff.CO(OM, BJ, zX, NW)](Kh, WJ), v6f),
+    tEf();
+    var P6f = LQ(c6f(), kr);
+    var V6f = P6f[Kh];
+    var W6f = P6f[Lh];
+    var r6f = P6f[Vh];
+    var J6f = P6f[OM];
+    var Q6f = nf[ff.vk.apply(null, [Rl, Jc, zW, kS])][ff.Um(Ih([]), pj, lh)] ? Lh : ff[ff.w5(Ih(Ih(Lh)), tc, t4, kN)]();
+    var C6f = nf[ff.vk.apply(null, [JC, Jc, Fv, kS])][ff.j5.apply(null, [KV, CM, sX])] ? Lh : Kh;
+    var N6f = nf[ff.vk.apply(null, [Ev, Jc, kv, kS])][ff.wm(Fv, Fv, tX, Rw)] ? Lh : Kh;
+    var U6f;
+    return U6f = ((((((((((((((((((((((((ff.bO.call(null, cR, bP, x4))[ff.qz(Ih(Ih([])), hh, QEf, Ov)](rEf, ff.H6(Ih([]), Y6f, w6f, Lh, WR, lW)))[ff.qz(Tv, XV, QEf, Ov)](function I6f() {
+        nM.push(Z6f);
+        var nOf;
+        var fOf;
+        var BOf = nf[ff.vk(DW, Jc, vR, EOf)][ff.RH(OOf, Ih(Ih(Kh)), kOf)] ? RP[Vh] : ff[ff.w5(sW, mP, Yc, kN)]();
+        var zOf = nf[ff.vk(qP, Jc, OW, EOf)][ff.Az.apply(null, [wW, Tc, sOf])] ? Lh : Kh;
+        var tOf = nf[ff.vk.call(null, IV, Jc, Mh, EOf)][ff.dz(Lh, Hl, YX)] ? Lh : Kh;
+        var YOf = nf[ff.vk.apply(null, [Ih([]), Jc, Xl, EOf])][ff.Im.call(null, OW, Zl, qOf)] ? Lh : Kh;
+        var TOf = nf[ff.vk.apply(null, [GV, Jc, Fv, EOf])][ff.Aq(IW, vJ, vV, qX)] ? Lh : Kh;
+        var HOf = nf[ff.vk(cl, Jc, HP, EOf)][ff.gq.call(null, BJ, NW, EOf)] ? Lh : RP[OM];
+        var mOf = nf[ff.vk.apply(null, [Zl, Jc, Tv, EOf])][ff.pq(CM, GV, dN, IV)] ? Lh : RP[OM];
+        var bOf = nf[ff.vk(JC, Jc, WJ, EOf)][ff.m6.call(null, xOf, YP, Ov, Rl, ql)] ? Lh : Kh;
+        var jOf = nf[ff.vk(jr, Jc, JC, EOf)][ff.w0(Ih(Ih([])), KOf, IW)] ? Lh : ff[ff.w5.call(null, mP, bv, Yc, kN)]();
+        var LOf = nf[ff.fO.apply(null, [jP, Ih(Lh), VC])][ff.BO.apply(null, [WJ, AOf, dP])].bind ? Lh : Kh;
+        var dOf = nf[ff.vk(Ih(Ih([])), Jc, vl, EOf)][ff.Zm(cl, KP, Ih(Ih([])), FOf)] ? Lh : Kh;
+        var gOf = nf[ff.vk(dl, Jc, jr, EOf)][ff.nb.call(null, WJ, Ih(Ih({})), pOf, XV)] ? Lh : Kh;
+        try {
+            var SOf = nM.slice();
+            nOf = nf[ff.vk.apply(null, [sW, Jc, bP, EOf])][ff.Qm(IC, IW, XOf)] ? Lh : Kh;
+        } catch (DOf) {
+            nM = SOf.slice();
+            nOf = Kh;
+        }
+        try {
+            var GOf = nM.slice();
+            fOf = nf[ff.vk(zr, Jc, tv, EOf)][ff.Nm(bV, Oc, QJ, BV)] ? Lh : Kh;
+        } catch (hOf) {
+            nM = GOf.slice();
+            fOf = Kh;
+        }
+        var MOf;
+        return MOf = Zh(Zh(Zh(Zh(Zh(Zh(Zh(Zh(Zh(Zh(Zh(Zh(Zh(BOf, Qv(zOf, Lh)), Qv(tOf, Vh)), Qv(YOf, OM)), Qv(TOf, kr)), Qv(HOf, ql)), Qv(mOf, Hc)), Qv(bOf, RP[gP])), Qv(nOf, RP[tl])), Qv(fOf, JC)), Qv(jOf, YP)), Qv(LOf, WJ)), Qv(dOf, Tv)), Qv(gOf, CM)),
+        nM.pop(),
+        MOf;
+    }(), ff.Wk.call(null, DW, vR, TX)))[ff.qz(DW, Tc, QEf, Ov)](V6f, ff.Wk.apply(null, [DW, SW, TX])))[ff.qz.call(null, xW, Ih([]), QEf, Ov)](W6f, ff.Wk.call(null, DW, Nr, TX)))[ff.qz(KP, Ih(Ih({})), QEf, Ov)](r6f, ff.Wk.apply(null, [DW, Mh, TX])))[ff.qz(Ih(Ih([])), zr, QEf, Ov)](J6f, ff.Wk(DW, cW, TX)))[ff.qz(Hc, XV, QEf, Ov)](Q6f, ff.Wk(DW, Il, TX)))[ff.qz(jP, Ol, QEf, Ov)](C6f, ff.Wk(DW, Ev, TX)))[ff.qz.call(null, tv, nQ, QEf, Ov)](N6f, ff.Wk(DW, pW, TX)))[ff.qz(CM, Ih([]), QEf, Ov)](h6f, ff.Wk(DW, rR, TX)))[ff.qz(Ih({}), Ih([]), QEf, Ov)](lOf, ff.Wk(DW, tv, TX)))[ff.qz.call(null, jP, WR, QEf, Ov)](UEf, ff.Wk(DW, Ih({}), TX)))[ff.qz(Ih(Ih(Kh)), Oc, QEf, Ov)](wEf, ff.Wk.apply(null, [DW, Hc, TX])))[ff.qz(Ih(Ih(Kh)), sl, QEf, Ov)](IEf, ff.Wk(DW, dM, TX)))[ff.qz.call(null, Ih(Ih(Kh)), tv, QEf, Ov)](ZEf, ff.Wk(DW, Ih(Ih([])), TX)))[ff.qz.apply(null, [Kv, DP, QEf, Ov])](f6f, ff.Wk(DW, jr, TX)))[ff.qz(Ih({}), Ev, QEf, Ov)](n6f, ff.Wk(DW, YP, TX)))[ff.qz(dM, xv, QEf, Ov)](B6f, ff.Wk(DW, Bv, TX)))[ff.qz.apply(null, [Ih(Ih([])), hR, QEf, Ov])](function vOf() {
+        nM.push(ROf);
+        var POf = [];
+        POf[ff.JO.apply(null, [mP, cOf, Hl])]((ff.fb(sW, Ih(Ih([])), VOf))[ff.qz.apply(null, [Al, JC, WOf, Ov])](nf[ff.vk.apply(null, [jV, Jc, Ih(Ih(Kh)), HX])][ff.Bb.call(null, Ev, xv, rOf)] ? RP[Vh] : Kh));
+        POf[ff.JO(pW, cOf, Hl)]((ff.Eb(hR, Ih(Ih(Kh)), JOf))[ff.qz.apply(null, [KP, nP, WOf, Ov])](nf[ff.vk(Vh, Jc, KV, HX)][ff.Fz(RR, WR, hI, tc)] && cU(ff.Fz(wW, GV, hI, tc), nf[ff.vk(AM, Jc, Ih(Ih([])), HX)]) ? Lh : Kh));
+        POf[ff.JO(cW, cOf, Hl)]((ff.Ob(NW, Al, QOf))[ff.qz(vl, KV, WOf, Ov)](rh(ff.kb(Ih(Kh), Ov, mX, kv), typeof nf[ff.TO.call(null, gl, OQ, YP, vr)][ff.zb.call(null, Y6f, BJ, bX)]) ? Lh : Kh));
+        POf[ff.JO.apply(null, [zW, cOf, Hl])]((ff.sb(COf, vl, NOf))[ff.qz.call(null, xV, OW, WOf, Ov)](nf[ff.vk(Ih(Ih(Lh)), Jc, bP, HX)][ff.w0(JC, UOf, IW)] && nf[ff.vk(Hl, Jc, Tc, HX)][ff.w0(Ih(Ih(Lh)), UOf, IW)][ff.tb(MN, OW, wOf)] ? Lh : Kh));
+        POf[ff.JO.apply(null, [kv, cOf, Hl])]((ff.Yb(CM, Hv, Qff))[ff.qz(AM, zW, WOf, Ov)](nf[ff.nz(dP, IOf, qP)][ff.qb.apply(null, [tc, dl, xX, OQ])] ? Lh : Kh));
+        POf[ff.JO(lW, cOf, Hl)]((ff.b6(hR, dC, ZOf, qv, kr, YP))[ff.qz.apply(null, [Ih(Ih([])), Lh, WOf, Ov])](nf[ff.vk.apply(null, [GV, Jc, Al, HX])][ff.Tb(cr, JC, jr, nkf)] ? Lh : Kh));
+        POf[ff.JO(kv, cOf, Hl)]((ff.Hb.apply(null, [kv, Iff, xv, D4]))[ff.qz(YP, Ih(Ih({})), WOf, Ov)](rG(ff.nO(mP, Ih(Kh), fkf), typeof nf[ff.x6(Oc, Bkf, Ekf, dP, mP, Oc)]) ? Lh : ff[ff.w5.call(null, kr, TP, Okf, kN)]()));
+        POf[ff.JO(vl, cOf, Hl)]((ff.j6(kkf, vl, sv, sl, OM))[ff.qz(sv, Nr, WOf, Ov)](nf[ff.vk(jv, Jc, lr, HX)][ff.mb(xW, jX, Zl)] && vh((nf[ff.zk.apply(null, [Hl, WR, KX])][ff.BO(qv, zkf, dP)][ff.EO(GV, wOf, gP)].call(nf[ff.vk(vV, Jc, lh, HX)][ff.mb.call(null, cl, jX, Zl)]))[ff.tO.apply(null, [dM, nP, zr, skf])](ff.bb.call(null, Lv, Oc, tkf)), Kh) ? Lh : ff[ff.w5(IW, rR, Okf, kN)]()));
+        POf[ff.JO(jv, cOf, Hl)]((ff.xb(UV, CM, LX, cl))[ff.qz.call(null, SW, Ih(Kh), WOf, Ov)](rh(ff.pk.call(null, dv, tl, Ykf), typeof nf[ff.vk(Ih(Lh), Jc, sW, HX)][ff.hs(Ih(Ih([])), pnf, sv)]) || rh(ff.pk.call(null, dv, nP, Ykf), typeof nf[ff.vk(mP, Jc, zW, HX)][ff.zB(qkf, OW, WR, Ih(Lh), TW)]) || rh(ff.pk.apply(null, [dv, Ih(Kh), Ykf]), typeof nf[ff.vk(IW, Jc, Ih(Ih([])), HX)][ff.Ms.apply(null, [WR, HL, UC])]) ? RP[Vh] : Kh));
+        POf[ff.JO(Ih(Ih({})), cOf, Hl)]((ff.jb.apply(null, [UV, KV, AZ]))[ff.qz(xv, Hv, WOf, Ov)](cU(ff.Kb(zW, AX, Dw), nf[ff.vk(qv, Jc, Rl, HX)]) ? nf[ff.vk(sl, Jc, xW, HX)][ff.Kb(kN, AX, Dw)] : Kh));
+        POf[ff.JO.apply(null, [DW, cOf, Hl])]((ff.Lb(bV, ql, dX))[ff.qz.call(null, Al, Ih({}), WOf, Ov)](rh(ff.pk.call(null, dv, ql, Ykf), typeof nf[ff.nz(Oc, IOf, qP)][ff.Ab.apply(null, [pW, Ih(Ih(Lh)), Tkf])]) ? Lh : Kh));
+        POf[ff.JO(Ih(Ih({})), cOf, Hl)]((ff.db(qP, Hkf, Ih(Ih(Lh)), FX))[ff.qz(Ih({}), bv, WOf, Ov)](rh(ff.pk(dv, rR, Ykf), typeof nf[ff.nz(Zl, IOf, qP)][ff.Fb(dZ, Oc, mkf)]) ? Lh : Kh));
+        POf[ff.JO(nP, cOf, Hl)]((ff.gb(jV, jr, bkf))[ff.qz.apply(null, [qU, PR, WOf, Ov])](nf[ff.QO(Ov, dl, pBf)][ff.BO(OM, zkf, dP)][ff.R5.call(null, kN, GV, xkf)] ? Kh : ff[ff.ss(sW, Ih(Ih([])), Tl)]()));
+        POf[ff.JO.call(null, IV, cOf, Hl)]((ff.pb(Bv, Rl, jkf))[ff.qz.apply(null, [kv, IW, WOf, Ov])](cU(ff.Sb.call(null, Oc, Nr, gX, bv), nf[ff.vk(XV, Jc, DW, HX)]) ? Lh : Kh));
+        var Kkf;
+        return Kkf = POf[ff.Os(Xl, HP, pX)](ff.Wk(DW, Ih(Ih(Kh)), Lkf)),
+        nM.pop(),
+        Kkf;                 这个函数是判断一些浏览器的环境
+    }(), ff.Wk.apply(null, [DW, Ih([]), TX])))[ff.qz(kN, cl, QEf, Ov)](JEf, ff.Wk(DW, CM, TX)))[ff.qz(vV, ql, QEf, Ov)](R6f, ff.Wk(DW, Rl, TX)))[ff.qz.call(null, dl, SW, QEf, Ov)](CEf, ff.Wk.call(null, DW, cR, TX)))[ff.qz.apply(null, [Hc, Vh, QEf, Ov])](mEf, ff.Wk(DW, qv, TX)))[ff.qz(Ih(Ih(Lh)), XV, QEf, Ov)](E6f, ff.Xb(Akf, lr, SX)),
+    nM.pop(),
+    U6f;
+};
+
+
+
+[
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",  UserAgent
+    "uaend",
+    "12147",        拿420219又一次进行计算
+    "20030107",   当前浏览器的编译版本号
+    "zh-CN",        语言
+    "Gecko",        navigator.product(所有浏览器都相同)
+    "5",            插件数
+    "0",
+    "0",        检测是否是自动化,比如webdriver
+    "0",
+    "420219",    拿开始的时间进行相关计算
+    "0",
+    "1707",   screen.availWidth
+    "1019",   screen.availHeight
+    "1707",   screen.width
+    "1067",   screen.height
+    "1897",   innerWidth         inner是页面大小，如果打开开发者工具，相应的参数会变小 width,height
+    "168",    有问题 innerHeight     正确的应该是1035
+    "1707",   获取浏览器窗口外部的宽度
+    "",
+    "cpen:0",
+    "i1:0",
+    "dm:0",
+    "cwen:0",
+    "non:1",
+    "opc:0",
+    "fc:0",
+    "sc:0",
+    "wrc:1",
+    "isc:0",
+    "vib:1",
+    "bat:1",
+    "x11:0",
+    "x12:1",
+    "8101",     用for取UserAgent的每个字符对于unicode编码值在 < 128 相加求和
+    "0.669185628334",       math.random 0~1的随机数
+    "853940798418.5",       时间戳/2
+    "0",
+    "0",
+    "loc:"
+]
